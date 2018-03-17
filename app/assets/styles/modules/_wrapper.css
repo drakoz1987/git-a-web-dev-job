@@ -35,4 +35,7 @@
     &-too-close {
         margin-bottom: 3rem;
     }
+    &__wrap {
+        margin: 0 8%;
+    }
 }
