@@ -70,21 +70,13 @@
 "use strict";
 
 
-var _Person = __webpack_require__(1);
+var _MobileMenu = __webpack_require__(1);
 
-var _Person2 = _interopRequireDefault(_Person);
+var _MobileMenu2 = _interopRequireDefault(_MobileMenu);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var $ = __webpack_require__(2);
-//Person = require('./modules/Person');
-
-
-var maria = new _Person2.default("Maria", "Red");
-var jhonathan = new _Person2.default("Jhonathan", "Orange");
-
-jhonathan.greet();
-maria.greet();
+var mobileMenu = new _MobileMenu2.default();
 
 /***/ }),
 /* 1 */
@@ -99,30 +91,49 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _jquery = __webpack_require__(2);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Person = function () {
-    function Person(fullName, favColor) {
-        _classCallCheck(this, Person);
+var MobileMenu = function () {
+    function MobileMenu() {
+        _classCallCheck(this, MobileMenu);
 
-        this.name = fullName;
-        this.favoriteColor = favColor;
+        this.siteHeader = document.querySelector(".site-header");
+        this.menuIcon = document.querySelector('.site-header__menu-icon');
+        this.menuContent = document.querySelector('#menuContent');
+        this.middleMenuLine = document.querySelector('#middle');
+        this.events();
     }
 
-    _createClass(Person, [{
-        key: "greet",
-        value: function greet() {
-            console.log("Hi There My name is " + this.name + " and my favorite color is " + this.favoriteColor);
+    _createClass(MobileMenu, [{
+        key: 'events',
+        value: function events() {
+            var _this = this;
+
+            this.menuIcon.addEventListener('click', function (e) {
+                _this.toggleTheMenu(_this);
+                e.preventDefault();
+            });
+        }
+    }, {
+        key: 'toggleTheMenu',
+        value: function toggleTheMenu() {
+            this.menuContent.setAttribute('data-state', this.menuContent.getAttribute('data-state') === 'open' ? 'closed' : 'open');
+            this.siteHeader.classList.toggle("site-header--is-expanded");
+            this.menuIcon.setAttribute('data-state', this.menuIcon.getAttribute('data-state') === 'open' ? 'closed' : 'open');
+            this.middleMenuLine.setAttribute('data-state', this.middleMenuLine.getAttribute('data-state') === 'open' ? 'closed' : 'open');
         }
     }]);
 
-    return Person;
+    return MobileMenu;
 }();
 
-//module.exports = Person;
-
-
-exports.default = Person;
+exports.default = MobileMenu;
 
 /***/ }),
 /* 2 */

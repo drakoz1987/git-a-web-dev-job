@@ -16,12 +16,14 @@
             <div class="site-header__logo">
                 <div class="icon icon--clear-view-escapes site-header__logo__graphic">Clear View Excapes</div>
             </div>
-            <div class="site-header__menu-icon"></div>
-            <div class="site-header__menu-content">
+            <div class="site-header__menu-icon" data-state="closed">
+                <div class="site-header__menu-icon__middle" id="middle" data-state="closed"></div>
+            </div>
+            <div id="menuContent" class="site-header__menu-content" data-state="closed">
                 <div class="site-header__btn-container">
-                    <a href="#" class="btn">Get in Touch with us</a>
+                    <a href="#" class="btn">Get in Touch</a>
                 </div>
-                <nav class="primary-nav primary-nav__pull-right">
+                <nav class="primary-nav primary-nav--pull-right">
                     <ul>
                         <li><a href="#our-beginning">Our Beginning</a></li>
                         <li><a href="#features">Features</a></li>
