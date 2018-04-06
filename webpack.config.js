@@ -1,6 +1,9 @@
 let path = require('path');
 module.exports = {
-    entry: "./app/assets/scripts/app.js", // string | object | array
+    entry: {
+        App: "./app/assets/scripts/app.js",
+        Vendor: "./app/assets/scripts/Vendor.js"
+    }, // string | object | array
     // Here the application starts executing
     // and webpack starts bundling
 
@@ -11,7 +14,7 @@ module.exports = {
         // the target directory for all output files
         // must be an absolute path (use the Node.js path module)
 
-        filename: "app.js", // string
+        filename: "[name].js", // string
         // the filename template for entry chunks
     },
     module: {
