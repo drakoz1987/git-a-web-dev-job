@@ -1019,12 +1019,12 @@ a {
         margin-bottom: 0;
     }
 
-.icon {
-    background-image: url('/assets/images/sprites/sprite-e79e95cc.svg');
+.icon{
+    background-image: url('../../assets/images/sprites/sprite-e79e95cc.svg');
 }
 
-.no-svg .icon {
-    background-image: url('/assets/images/sprites/sprite-e79e95cc.png');
+.no-svg .icon{
+    background-image: url('../../assets/images/sprites/sprite-e79e95cc.png'); 
 }
 
 .icon--clear-view-escapes {
